@@ -11,18 +11,18 @@ body {
 
 .container {
   background: #edede1;
-  width: 960px;
+  width: 90%;
   margin: 0 auto;
 }
 
 section {
-  width: 650px;
+  width: 67.7083333333%;
   float: left;
 }
 
 aside {
   background: #d1d1c1;
-  width: 300px;
+  width: 31.25%;
   float: right;
 }
 
