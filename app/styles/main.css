@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font: 100%/1.5em Helvetica,Arial, sans-serif;
+  color: #313131;
+}
+
+.container {
+  background: #edede1;
+  width: 960px;
+  margin: 0 auto;
+}
+
+section {
+  width: 650px;
+  float: left;
+}
+
+aside {
+  background: #d1d1c1;
+  width: 300px;
+  float: right;
+}
+
+footer {
+  clear: both;
+}
