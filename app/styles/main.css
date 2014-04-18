@@ -5,25 +5,25 @@
 }
 
 body {
-  font: 18px/1.5em Helvetica,Arial, sans-serif;
+  font: 100%/1.5em Helvetica,Arial, sans-serif;
   color: #313131;
 }
 
 .container {
   background: #edede1;
-  width: 55em;
+  width: 90%;
   margin: 0 auto;
+  display: table;
 }
 
 section {
-  width: 67.7083333333%;
-  float: left;
+  display: table-cell;
 }
 
 aside {
   background: #d1d1c1;
-  width: 31.25%;
-  float: right;
+  width: 300px;
+  display: table-cell;
 }
 
 footer {

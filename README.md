@@ -33,10 +33,55 @@ Optimal measure value is 60 - 80 characters.
 
 Can use em's in container width (but makes width effectively static)
   ```css
-    .container {
+  .container {
     background: #edede1;
     width: 55em;
     margin: 0 auto;
   }
   ```
 
+### Hybrid Layouts
+Mixture of other layouts. Example, make left section fluid, and smaller right aside section fixed.
+
+Sample use case: online advertising, might want fluid left hand content section, and fixed width ads on right-hand side:
+  ```css
+  section {
+    width: 65%;
+    float: left;
+  }
+
+  aside {
+    background: #d1d1c1;
+    width: 300px;
+    float: right;
+  }
+  ```
+
+Above works, except when browser width is shrunk to point where 300px is too wide to fit in remaining space, ad falls below:
+![alt text](https://github.com/danielabar/rwd-tuts/blob/master/hybrid-layout-issue.gif "Hybrid Layout Issue")
+
+Solution is to use css to mimic table behaviour, i.e. a single fixed width cell with remainder fluid.
+
+Only need to specify width of ```aside``` and the main left section will adjust accordingly:
+  ```css
+  .container {
+    background: #edede1;
+    width: 90%;
+    margin: 0 auto;
+    display: table;
+  }
+
+  section {
+    display: table-cell;
+  }
+
+  aside {
+    background: #d1d1c1;
+    width: 300px;
+    display: table-cell;
+  }
+  ```
+
+For browser support, check [Can I Use](http://caniuse.com/#feat=css-table)
+
+Note that css table display widely supported, except not IE 7.0
