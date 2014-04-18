@@ -85,3 +85,6 @@ Only need to specify width of ```aside``` and the main left section will adjust 
 For browser support, check [Can I Use](http://caniuse.com/#feat=css-table)
 
 Note that css table display widely supported, except not IE 7.0
+
+### Building a Fluid Grid
+Example of building a 16 column grid. Each column should be 100% / 16 columns wide = 6.25
