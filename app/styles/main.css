@@ -5,13 +5,13 @@
 }
 
 body {
-  font: 100%/1.5em Helvetica,Arial, sans-serif;
+  font: 18px/1.5em Helvetica,Arial, sans-serif;
   color: #313131;
 }
 
 .container {
   background: #edede1;
-  width: 90%;
+  width: 55em;
   margin: 0 auto;
 }
 
