@@ -117,7 +117,6 @@ Use ```max-width``` to ensure all images remain within their containers, so extr
     max-width: 100%;
     height: auto;
   }
+  ```
 
 Performance issue: Still loading large image, can be issue for mobile devices, no point in loading 2000px wide image if will get resized and displayed at 300px width.
-
-  ```
