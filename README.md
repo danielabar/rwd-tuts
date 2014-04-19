@@ -19,6 +19,7 @@ It has live reload, so simply save changes to any html or css and it will be aut
 - [Breakpoints](#user-content-breakpoints)
 - [Mobile First](#user-content-mobile-first)
 - [Only Keyword](#user-content-only-keyword)
+- [Viewport Metatag](#user-content-viewport-metatag)
 
 ### Fluid Layout
 Convert fixed width containers to percentages, so that columns resize according to browser window.
@@ -196,3 +197,31 @@ Then in the css, add specific styles:
     max-width: 600px;
   }
   ```
+
+### Viewport Metatag
+Without this tag, mobile browsers will interpret the site as the desktop experience (eg: mobile Safari will assume 900px) and scale it down to display in the mobile screen.
+This means the media queries to capture the small screen will not take effect. To fix this, use viewport meta tag in ```<head>```. For example:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  ```
+
+If don't want users to be able to zoom in on content, use:
+  ```html
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  ```
+
+However, this is bad for usability, no reason to not allow users to zoom in so recommend not to use it.
+
+Note: viewport metatag is _not_ an HTML standard. It was introduced by Apple, and later adoped by other browser vendors.
+W3C is working on a standard, but it's completely different from the viewport metatag.
+
+Microsoft has started using the W3C standard as of Windows 8, which is to use the viewport property in css.
+Looks like this (using the ms prefix):
+  ```css
+  @ms-viewport {
+    width: device-width;
+  }
+  ```
+
+It's not widely supported yet, but recommend adding the ms-viewport property at top of css,
+because IE versions installed on Windows 8 will use the standard, and _ignore_ the viewport metatag.
