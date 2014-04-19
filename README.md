@@ -17,6 +17,7 @@ It has live reload, so simply save changes to any html or css and it will be aut
 - [Media Queries](#user-content-media-queries)
 - [Breakpoints](#user-content-breakpoints)
 - [Mobile First](#user-content-mobile-first)
+- [Only Keyword](#user-content-only-keyword)
 
 ### Fluid Layout
 Convert fixed width containers to percentages, so that columns resize according to browser window.
@@ -164,7 +165,7 @@ even if later there is a media query to not display it.
 Sequentially order the css styles so the defaults are for mobile/smaller screens.
 Then add media queries for larger/desktop screens.
 
-### "only" keyword
+### Only Keyword
 Older browsers (IE8 and below) understand ```media screen``` but not ```and (/* rules etc. */)```.
 So it will simply apply ALL the rules in all the media queries, which will result in a big mess.
 To fix this, only keyword is used. For example:
@@ -180,10 +181,17 @@ But this means they're getting only the default styles, which if doing mobile fi
 One solution is to use [Respond polyfill](https://github.com/scottjehl/respond)
 
 Another "solution" is to leave older browsers with the mobile experience, and tweak it to make it a little more usable.
-This requires use of conditional styles. From HTML5 Boilerplate:
+This requires use of conditional styles. From HTML5 Boilerplate, place this just after doctype in html:
   ```html
   <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
   <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
   <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
   <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  ```
+
+Then in the css, add specific styles:
+  ```css
+  .lt-ie9 .container {
+    max-width: 600px;
+  }
   ```
