@@ -120,3 +120,25 @@ Use ```max-width``` to ensure all images remain within their containers, so extr
   ```
 
 Performance issue: Still loading large image, can be issue for mobile devices, no point in loading 2000px wide image if will get resized and displayed at 300px width.
+
+### Media Queries
+A media query is a conditional statement. Example, if the page that is being viewed is being printed, then use this stylesheet:
+  ```html
+  <link rel="stylesheet" type="text/css" media="print" href="print.css">
+  ```
+
+CSS3 media queries are more advanced than simply ```screen``` or ```print```.
+Can use attributes such as max-width, min-width, height, orientation of viewport in conditional statements.
+Example, when screen is this wide, or this hide, then use this style.
+
+Simple example, change header color when viewport width <= 520 px:
+  ```css
+  @media screen and (max-width: 520px) {
+    h1 {
+      color: red;
+    }
+  }
+  ```
+
+[Tutorial for further practice with media queries](http://webdesign.tutsplus.com/articles/a-basic-responsive-grid-plus-handy-css3-media-query-reporter--webdesign-5121)
+

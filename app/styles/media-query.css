@@ -1,0 +1,23 @@
+/*styles*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font: 100%/1.5em Helvetica,Arial,sans-serif;
+  color: #313131;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* If its a screen with viewport width <= 520px then... */
+@media screen and (max-width: 520px) {
+  h1 {
+    color: red;
+  }
+}
