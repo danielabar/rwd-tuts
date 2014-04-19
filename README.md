@@ -15,6 +15,8 @@ It has live reload, so simply save changes to any html or css and it will be aut
 - [Building a Fluid Grid](#user-content-building-a-fluid-grid)
 - [Flexible Images](#user-content-flexible-images)
 - [Media Queries](#user-content-media-queries)
+- [Breakpoints](#user-content-breakpoints)
+- [Mobile First](#user-content-mobile-first)
 
 ### Fluid Layout
 Convert fixed width containers to percentages, so that columns resize according to browser window.
@@ -149,3 +151,15 @@ Simple example, change header color when viewport width <= 520 px:
 
 [Tutorial for further practice with media queries](http://webdesign.tutsplus.com/articles/a-basic-responsive-grid-plus-handy-css3-media-query-reporter--webdesign-5121)
 
+### Breakpoints
+Point in screen width where decision is made to change the styles.
+
+For smaller screens, can make columns take up 100% of the width for legibility.
+
+Can also choose to load a smaller image or not load any image.
+But since css is read from top down, if have large image referenced first, it will still be loaded,
+even if later there is a media query to not display it.
+
+### Mobile First
+Sequentially order the css styles so the defaults are for mobile/smaller screens.
+Then add media queries for larger/desktop screens.
