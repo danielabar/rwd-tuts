@@ -87,4 +87,25 @@ For browser support, check [Can I Use](http://caniuse.com/#feat=css-table)
 Note that css table display widely supported, except not IE 7.0
 
 ### Building a Fluid Grid
-Example of building a 16 column grid. Each column should be 100% / 16 columns wide = 6.25
+Example of building a 16 column grid. Each column should be 100% / 16 columns wide = 6.25.
+  ```css
+  .container .columns.one       {   width: 6.25%;   }
+  .container .columns.two       {   width: 12.5%;   }
+  .container .columns.three     {   width: 18.75%;  }
+  .container .columns.four      {   width: 25%;     }
+  /* etc up to .four 100% */
+  ```
+
+Problem with this simple system, if you add a border to columns (aka gutter), the 16 width won't fit and will start wrapping to next line.
+Solution is to use ```border-sizing``` attribute such that borders and padding are measured inside the element, and keep the total width the same (like old IE6 box model).
+  ```css
+  * {
+    -moz-boz-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  ```
+Another problem, if content in one cell wraps, the rows below don't clear. Solution, need a "row" class to explicitly clear.

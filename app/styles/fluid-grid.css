@@ -1,5 +1,8 @@
 * {
-  margin: 0;
+  -moz-boz-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 5px 0px 0px 0px;
   padding: 0;
   -webkit-font-smoothing: antialiased;
 }
@@ -12,11 +15,22 @@ body {
 .container {
   width: 90%;
   margin: 0 auto;
+  background: rgba(60,151,200,0.57)
+}
+
+.row {
+  float: left;
+  clear: both;
+  width: 100%;
 }
 
 .container .columns {
   float: left;
   background: tomato;
+  margin: 0 0 1em;
+  text-align: center;
+  padding-right: 1em;
+  border-left: 1em;
 }
 
 .container .columns.one       {   width: 6.25%;   }
@@ -35,3 +49,18 @@ body {
 .container .columns.fourteen  {   width: 87.5%;   }
 .container .columns.fifteen   {   width: 93.75%;  }
 .container .columns.sixteen   {   width: 100%;    }
+
+.clearfix:after,
+.container:after {
+  content: '';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.clearfix,
+.container {
+  zoom: 1;
+}
