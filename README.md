@@ -9,6 +9,7 @@ To run ```grunt serve```
 
 It has live reload, so simply save changes to any html or css and it will be automatically refreshed in the browser.
 
+## Contents
 - [Fluid Layout](#user-content-fluid-layout)
 - [Elastic Layout](#user-content-elastic-layout)
 - [Hybrid Layouts](#user-content-hybrid-layouts)
