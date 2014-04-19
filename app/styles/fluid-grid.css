@@ -12,6 +12,11 @@ body {
   color: #313131;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 90%;
   margin: 0 auto;

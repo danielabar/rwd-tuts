@@ -109,3 +109,15 @@ Solution is to use ```border-sizing``` attribute such that borders and padding a
   }
   ```
 Another problem, if content in one cell wraps, the rows below don't clear. Solution, need a "row" class to explicitly clear.
+
+### Flexible Images
+Use ```max-width``` to ensure all images remain within their containers, so extra large images don't mess up the layout.
+  ```css
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+Performance issue: Still loading large image, can be issue for mobile devices, no point in loading 2000px wide image if will get resized and displayed at 300px width.
+
+  ```
