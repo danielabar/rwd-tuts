@@ -225,3 +225,5 @@ Looks like this (using the ms prefix):
 
 It's not widely supported yet, but recommend adding the ms-viewport property at top of css,
 because IE versions installed on Windows 8 will use the standard, and _ignore_ the viewport metatag.
+
+### Break Points
