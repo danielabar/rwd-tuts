@@ -8,8 +8,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
-body {
+/* Default font size is usually 16px for most browsers, so 100% of that is 16px */
+html {
   font: 100%/1.5em Helvetica,Arial, sans-serif;
+}
+
+/*
+  For smaller screens, make font size a little smaller, targetting 14px.
+  To achieve this in a responsive way, calculate ems: 14/16 = 0.875;
+*/
+body {
+  font-size: 0.875em;
+  line-height: 1.5em;
   color: #313131;
 }
 
@@ -31,8 +41,6 @@ img {
 
 .container .columns {
   float: left;
-  margin: 0 0 1em;
-  background: #dedede;
   padding-right: 1em;
   border-left: 1em;
 }
@@ -69,8 +77,25 @@ img {
   zoom: 1;
 }
 
-/* media queries: For screens larger than 500px */
-@media only screen and (min-width: 500px) {
+/* page specific styles */
+.featured-section .four {
+  margin: 1em 0;
+}
+
+/* debug */
+#size {
+  float: right;
+  color: #76ABFC;
+}
+
+/* media queries: For screens larger than 450px */
+@media only screen and (min-width: 450px) {
+
+  body {
+    font-size: 1em; /* 16px */
+    line-height: 1.5em;
+    color: #313131;
+  }
 
   .container {
     width: 90%;
@@ -98,6 +123,35 @@ img {
     padding-bottom: 30%;
     background: url('../images/bigimage.jpg') no-repeat center center;
     background-size: cover;
+  }
+
+  /* override the 25% width to improve legibility of the featured section */
+  .container .featured-section .four {
+    width: 50%
+  }
+
+  /* fix 3rd section being blocked by bigger 1st section */
+  .container .featured-section .four:nth-child(3) {
+    clear: both;
+  }
+
+}
+
+/* For screens larger than 900px, use 4-column layout */
+@media only screen and (min-width: 900px) {
+
+  .container .featured-section .four {
+    width: 25%
+  }
+
+  /* fix 3rd section being blocked by bigger 1st section */
+  .container .featured-section .four:nth-child(3) {
+    clear: none;
+  }
+
+  /* for larger screens, use more top and bottom margins */
+  .featured-section .four {
+    margin: 2em 0;
   }
 
 }

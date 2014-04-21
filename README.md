@@ -226,4 +226,9 @@ Looks like this (using the ms prefix):
 It's not widely supported yet, but recommend adding the ms-viewport property at top of css,
 because IE versions installed on Windows 8 will use the standard, and _ignore_ the viewport metatag.
 
-### Break Points
+### More Break Points
+Can also focus on the content, rather than arbitrarily picking breakpoints at various screen sizes.
+Generally for smaller screens, make layout more compact. For example:
+
+* Reduce top and bottom margins on smaller screens
+* Reduce font size for smaller screens
