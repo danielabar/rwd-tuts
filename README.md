@@ -232,3 +232,23 @@ Generally for smaller screens, make layout more compact. For example:
 
 * Reduce top and bottom margins on smaller screens
 * Reduce font size for smaller screens
+
+### Responsive Navigation
+Use proper semantic markup, ```<nav>``` element containing an unordered list. For example:
+  ```html
+  <nav>
+    <ul>
+      <li><a href="#">link</a></li>
+    </ul>
+  </nav>
+  ```
+
+Links can be displayed in a horizontal or vertical list.
+
+Responsive challenge: navigation can end up taking up the entire viewport of a small screen.
+
+Strategy: For mobile screens, move navigation links to bottom. With smaller link at top right that moves user to bottom if they want to see navigation.
+
+Important to give links enough padding around each so that they can be easily touched for mobile, must be physically large enough for a fingerprint to hit.
+
+(8:55)
