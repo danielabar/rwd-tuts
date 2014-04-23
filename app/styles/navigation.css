@@ -188,6 +188,21 @@ nav[role="primary"] ul li:last-child a {
     clear: both;
   }
 
+  /* navigation */
+  a.nav-link {
+    display: none; /* nav link not needed for wider screens */
+  }
+
+  nav[role="primary"] ul {
+    position: relative;
+  }
+
+  nav[role="primary"] ul li a {
+    float: left;
+    background: none;
+    color: #333;
+    border: none;
+  }
 }
 
 /* For screens larger than 900px, use 4-column layout */
