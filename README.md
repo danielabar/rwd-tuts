@@ -20,6 +20,8 @@ It has live reload, so simply save changes to any html or css and it will be aut
 - [Mobile First](#user-content-mobile-first)
 - [Only Keyword](#user-content-only-keyword)
 - [Viewport Metatag](#user-content-viewport-metatag)
+- [More Break Points](#user-content-more-break-points)
+- [Responsive Navigation](#user-content-responsive-navigation)
 
 ### Fluid Layout
 Convert fixed width containers to percentages, so that columns resize according to browser window.
@@ -251,4 +253,3 @@ Strategy: For mobile screens, move navigation links to bottom. With smaller link
 
 Important to give links enough padding around each so that they can be easily touched for mobile, must be physically large enough for a fingerprint to hit.
 
-(8:55)
