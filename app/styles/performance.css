@@ -1,0 +1,243 @@
+/* Default styles are for small screens */
+* {
+  -moz-boz-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 5px 0px 0px 0px;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Default font size is usually 16px for most browsers, so 100% of that is 16px */
+/* Min height is to provide some space so that responsive navigation menu doesn't cover up the content */
+html {
+  font: 100%/1.5em Helvetica,Arial, sans-serif;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 20em;
+}
+
+/*
+  For smaller screens, make font size a little smaller, targetting 14px.
+  To achieve this in a responsive way, calculate ems: 14/16 = 0.875;
+*/
+body {
+  font-size: 0.875em;
+  line-height: 1.5em;
+  color: #313131;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.row {
+  float: left;
+  clear: both;
+  width: 100%;
+}
+
+.container .columns {
+  float: left;
+  padding-right: 1em;
+  border-left: 1em;
+}
+
+.container .columns.one,
+.container .columns.two,
+.container .columns.three,
+.container .columns.four,
+.container .columns.five,
+.container .columns.six,
+.container .columns.seven,
+.container .columns.eight,
+.container .columns.nine,
+.container .columns.ten,
+.container .columns.eleven,
+.container .columns.twelve,
+.container .columns.thirteen,
+.container .columns.fourteen,
+.container .columns.fifteen,
+.container .columns.sixteen   {   width: 100%;    }
+
+.clearfix:after,
+.container:after {
+  content: '';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.clearfix,
+.container {
+  zoom: 1;
+}
+
+/* logo */
+h1.logo {
+  float: left;
+}
+
+h1.logo a {
+  width: 200px;
+  height: 71px;
+  display: block;
+  background: url(../images/logo.png) no-repeat 0 0;
+
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
+}
+
+/* navigation */
+a.nav-link {
+  float: right;
+  background: tomato;
+  text-decoration: none;
+  color: white;
+  padding: .5em;
+  font-weight: bold;
+}
+
+nav[role="primary"] ul {
+  list-style: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0px;
+}
+
+nav[role="primary"] ul li {
+  margin-top: 0px;
+}
+
+nav[role="primary"] ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  background: #444;
+  display: block;
+  padding: .75em;
+  margin-top: 0px;
+  border-bottom: 1px solid #999;
+  color: #f7f7f7;
+}
+
+/* hover state (won't work on touch device) */
+nav[role="primary"] ul li a:hover {
+  background: tomato;
+}
+
+/* no border needed on the last nav link */
+nav[role="primary"] ul li:last-child a {
+  border: none;
+}
+
+/* page specific styles */
+.featured-section .four {
+  margin: 1em 0;
+}
+
+/* debug */
+#size {
+  float: right;
+  color: #76ABFC;
+}
+
+/* media queries: For screens larger than 450px */
+@media only screen and (min-width: 450px) {
+
+  body {
+    font-size: 1em; /* 16px */
+    line-height: 1.5em;
+    color: #313131;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .container .columns.one       {   width: 6.25%;   }
+  .container .columns.two       {   width: 12.5%;   }
+  .container .columns.three     {   width: 18.75%;  }
+  .container .columns.four      {   width: 25%;     }
+  .container .columns.five      {   width: 31.5%;   }
+  .container .columns.six       {   width: 37.5%;   }
+  .container .columns.seven     {   width: 43.75%;  }
+  .container .columns.eight     {   width: 50%;     }
+  .container .columns.nine      {   width: 56.25%;  }
+  .container .columns.ten       {   width: 62.5%;   }
+  .container .columns.eleven    {   width: 68.75%;  }
+  .container .columns.twelve    {   width: 75%;     }
+  .container .columns.thirteen  {   width: 81.25%;  }
+  .container .columns.fourteen  {   width: 87.5%;   }
+  .container .columns.fifteen   {   width: 93.75%;  }
+  .container .columns.sixteen   {   width: 100%;    }
+
+  .columns.banner {
+    padding-bottom: 30%;
+    background: url('../images/bigimage.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  /* override the 25% width to improve legibility of the featured section */
+  .container .featured-section .four {
+    width: 50%
+  }
+
+  /* fix 3rd section being blocked by bigger 1st section */
+  .container .featured-section .four:nth-child(3) {
+    clear: both;
+  }
+
+  /* navigation */
+  a.nav-link {
+    display: none; /* nav link not needed for wider screens */
+  }
+
+  nav[role="primary"] ul {
+    position: relative;
+  }
+
+  nav[role="primary"] ul li a {
+    float: left;
+    background: none;
+    color: #333;
+    border: none;
+  }
+}
+
+/* For screens larger than 900px, use 4-column layout */
+@media only screen and (min-width: 900px) {
+
+  .container .featured-section .four {
+    width: 25%
+  }
+
+  /* fix 3rd section being blocked by bigger 1st section */
+  .container .featured-section .four:nth-child(3) {
+    clear: none;
+  }
+
+  /* for larger screens, use more top and bottom margins */
+  .featured-section .four {
+    margin: 2em 0;
+  }
+
+}
+
+/* Support for browsers older than IE9 */
+.lt-ie9 .container {
+  max-width: 600px;
+}

@@ -22,6 +22,7 @@ It has live reload, so simply save changes to any html or css and it will be aut
 - [Viewport Metatag](#user-content-viewport-metatag)
 - [More Break Points](#user-content-more-break-points)
 - [Responsive Navigation](#user-content-responsive-navigation)
+- [Optimizing for Performance](#user-content-optimizing-for-performance)
 
 ### Fluid Layout
 Convert fixed width containers to percentages, so that columns resize according to browser window.
@@ -253,3 +254,39 @@ Strategy: For mobile screens, move navigation links to bottom. With smaller link
 
 Important to give links enough padding around each so that they can be easily touched for mobile, must be physically large enough for a fingerprint to hit.
 
+### Optimizing for Performance
+Can't assume that user having wide screen implies user also lightning fast internet connection.
+
+Old technique for replacing text with image is to hide image far away:
+  ```css
+  h1.logo a {
+    width: 200px;
+    height: 71px;
+    display: block;
+    background: url(../images/logo.png) no-repeat 0 0;
+    text-indent: -9999%;
+  }
+  ```
+
+But causes performance issue on iPad because even though image is off view, iPad will still render a massive canvas, while only displaying part of it.
+
+Better solution
+  ```css
+    h1.logo a {
+    width: 200px;
+    height: 71px;
+    display: block;
+    <!-- background: url(../images/logo.png) no-repeat 0 0; -->
+    background: url(../images/logo-compress.png) no-repeat 0 0;
+
+    border: 0;
+    font: 0/0 a;
+    text-shadow: none;
+    color: transparent;
+    background-color: transparent;
+  }
+  ```
+
+If have many images, build a sprite sheet with all the images and use that single sheet. Reduces amount of server requests required to pull all the assets.
+
+Use [tinypng.org](https://tinypng.com/) to shrink png images.
