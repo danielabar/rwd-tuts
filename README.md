@@ -255,7 +255,8 @@ Strategy: For mobile screens, move navigation links to bottom. With smaller link
 Important to give links enough padding around each so that they can be easily touched for mobile, must be physically large enough for a fingerprint to hit.
 
 ### Optimizing for Performance
-Can't assume that user having wide screen implies user also lightning fast internet connection.
+Can't assume that user having wide screen implies user also lightning fast internet connection and powerful machine.
+Line between tablets and desktops is becoming blurred.
 
 Old technique for replacing text with image is to hide image far away:
   ```css
@@ -290,3 +291,18 @@ Better solution
 If have many images, build a sprite sheet with all the images and use that single sheet. Reduces amount of server requests required to pull all the assets.
 
 Use [tinypng.org](https://tinypng.com/) to shrink png images.
+
+If have multiple css, javascript files, each one requires an http request, which can slow down overall load time of page.
+
+For example, split up performance.css, move all grid related styles to grid.css.
+Then import grid in performance:
+  ```css
+  /* Imports */
+  @import url("grid.css");
+  ```
+
+It's convenient to split up large css into mutliple files, but for performance, want to combine them again for a production site.
+
+[shrinker.ch](http://www.shrinker.ch/) is online tool to concat and compress css and javascript files.
+
+But using online tool is not an optimal workflow. Use an automated tool to concat and minify files.
