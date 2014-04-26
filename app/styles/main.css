@@ -1,31 +1,251 @@
+/* imports */
+@import url("grid.css");
+
+/* Default styles are for small screens */
 * {
-  margin: 0;
+  -moz-boz-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0px 0px 0px 0px;
   padding: 0;
   -webkit-font-smoothing: antialiased;
 }
 
-body {
+/* Default font size is usually 16px for most browsers, so 100% of that is 16px */
+/* Min height is to provide some space so that responsive navigation menu doesn't cover up the content */
+html {
   font: 100%/1.5em Helvetica,Arial, sans-serif;
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 20em;
+}
+
+/*
+  For smaller screens, make font size a little smaller, targetting 14px.
+  To achieve this in a responsive way, calculate ems: 14/16 = 0.875;
+*/
+body {
+  font-size: 0.875em;
+  line-height: 1.5em;
   color: #313131;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* typography */
+h3 {
+  color: #cc6741;
+}
+
 .container {
-  background: #edede1;
-  width: 90%;
+  width: 98%;
   margin: 0 auto;
-  display: table;
 }
 
-section {
-  display: table-cell;
+/* logo */
+h1.logo a {
+  width: 200px;
+  height: 71px;
+  display: block;
+  background: url(../images/logo.png) no-repeat 0 0;
+  margin: 0 auto;
+
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-color: transparent;
 }
 
-aside {
-  background: #d1d1c1;
-  width: 300px;
-  display: table-cell;
-}
-
+/* footer */
 footer {
-  clear: both;
+  text-align: center;
+  padding: 2em 0 0 0;
+  font-family: georgia, serif;
+}
+
+/* header */
+header.row {
+  padding: 3em 0;
+}
+
+/* band styles */
+.band {
+  padding: 2em 0;
+}
+
+/* navigation */
+a.nav-link {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  background: #cc6741;
+  text-decoration: none;
+  color: white;
+  padding: .5em;
+  font-weight: bold;
+  border-radius: 0 0 .2em .2em;
+}
+
+nav[role="primary"] ul {
+  list-style: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 0px;
+}
+
+nav[role="primary"] ul li {
+  margin-top: 0px;
+}
+
+nav[role="primary"] ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  background: #444;
+  display: block;
+  padding: .75em;
+  margin-top: 0px;
+  border-bottom: 1px solid #999;
+  color: #f7f7f7;
+}
+
+/* hover state (won't work on touch device) */
+nav[role="primary"] ul li a:hover {
+  background: #cc6741;
+}
+
+/* no border needed on the last nav link */
+nav[role="primary"] ul li:last-child a {
+  border: none;
+}
+
+/* page specific styles */
+.featured-section {
+  padding: 2em 0 0;
+}
+
+.featured-section .four {
+  margin: 1em 0;
+}
+
+/* debug */
+#size {
+  float: right;
+  color: #76ABFC;
+}
+
+.banner h2 {
+  color: #cc6741;
+  font-size: 3.2em;
+  line-height: 1em;
+  letter-spacing: -.05em;
+  text-align: center;
+  font-family: georgia, serif;
+}
+
+.learn-more {
+  background: #3b3b3b;
+  text-align: center;
+}
+
+.learn-more h2 {
+  color: #f9f9f9;
+  line-height: 2em;
+  font-size: 2em;
+}
+
+.button {
+  padding: 0 .75em;
+  background: #cc6741;
+  color: white;
+  text-decoration: none;
+  border-radius: .1em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.button:hover {
+  background: #da6133;
+}
+
+/* media queries: For screens larger than 450px */
+@media only screen and (min-width: 450px) {
+
+  h1.logo {
+    float: left;
+    margin: 0 1em 0 0;
+  }
+
+  .band.banner {
+    padding-bottom: 10% 0;
+    background: url('../images/bigimage.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  .banner h2 {
+    color: white;
+    font-size: 5em;
+    text-align: left;
+  }
+
+  /* override the 25% width to improve legibility of the featured section */
+  .container .featured-section .four {
+    width: 50%
+  }
+
+  /* fix 3rd section being blocked by bigger 1st section */
+  .container .featured-section .four:nth-child(3) {
+    clear: both;
+  }
+
+  /* navigation */
+  a.nav-link {
+    display: none; /* nav link not needed for wider screens */
+  }
+
+  nav[role="primary"] ul {
+    position: relative;
+  }
+
+  nav[role="primary"] ul li {
+    position: relative;
+    margin: 1.8em 0 0 0;
+  }
+
+  nav[role="primary"] ul li a {
+    float: left;
+    background: none;
+    color: #333;
+    border: none;
+    border-radius: 0.2em;
+  }
+
+  nav[role="primary"] ul li a:hover {
+    color: #f8f8f8;
+    background: #3b3b3b;
+  }
+}
+
+/* For screens larger than 900px, use 4-column layout */
+@media only screen and (min-width: 900px) {
+
+  .container .featured-section .four {
+    width: 25%
+  }
+
+  /* fix 3rd section being blocked by bigger 1st section */
+  .container .featured-section .four:nth-child(3) {
+    clear: none;
+  }
+
+  /* for larger screens, use more top and bottom margins */
+  .featured-section .four {
+    margin: 2em 0;
+  }
+
 }
