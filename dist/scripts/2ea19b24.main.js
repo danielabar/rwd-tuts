@@ -1,0 +1,1 @@
+"use strict";function showSize(){$("#size").html("Window "+$(window).width()+" x "+$(window).height()),$("#size2").html("Screen "+screen.width+"x "+screen.height)}$(window).on("resize",showSize),showSize();

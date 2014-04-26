@@ -23,6 +23,7 @@ It has live reload, so simply save changes to any html or css and it will be aut
 - [More Break Points](#user-content-more-break-points)
 - [Responsive Navigation](#user-content-responsive-navigation)
 - [Optimizing for Performance](#user-content-optimizing-for-performance)
+- [Testing the Responsive Web](#user-content-testing-the-responsive-web)
 
 ### Fluid Layout
 Convert fixed width containers to percentages, so that columns resize according to browser window.
@@ -306,3 +307,8 @@ It's convenient to split up large css into mutliple files, but for performance, 
 [shrinker.ch](http://www.shrinker.ch/) is online tool to concat and compress css and javascript files.
 
 But using online tool is not an optimal workflow. Use an automated tool to concat and minify files.
+
+### Testing the Responsive Web
+Manually changing browser size on desktop isn't representative of how site will really look on a mobile device.
+
+Online tool for testing layout: [Responsinator](http://www.responsinator.com/)
