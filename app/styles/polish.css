@@ -6,7 +6,7 @@
   -moz-boz-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 5px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   padding: 0;
   -webkit-font-smoothing: antialiased;
 }
@@ -35,21 +35,23 @@ img {
   height: auto;
 }
 
+/* typography */
+h3 {
+  color: #cc6741;
+}
+
 .container {
   width: 98%;
   margin: 0 auto;
 }
 
 /* logo */
-h1.logo {
-  float: left;
-}
-
 h1.logo a {
   width: 200px;
   height: 71px;
   display: block;
   background: url(../images/logo.png) no-repeat 0 0;
+  margin: 0 auto;
 
   border: 0;
   font: 0/0 a;
@@ -58,14 +60,34 @@ h1.logo a {
   background-color: transparent;
 }
 
+/* footer */
+footer {
+  text-align: center;
+  padding: 2em 0 0 0;
+  font-family: georgia, serif;
+}
+
+/* header */
+header.row {
+  padding: 3em 0;
+}
+
+/* band styles */
+.band {
+  padding: 2em 0;
+}
+
 /* navigation */
 a.nav-link {
-  float: right;
-  background: tomato;
+  position: absolute;
+  top: 0;
+  right: 1em;
+  background: #cc6741;
   text-decoration: none;
   color: white;
   padding: .5em;
   font-weight: bold;
+  border-radius: 0 0 .2em .2em;
 }
 
 nav[role="primary"] ul {
@@ -94,7 +116,7 @@ nav[role="primary"] ul li a {
 
 /* hover state (won't work on touch device) */
 nav[role="primary"] ul li a:hover {
-  background: tomato;
+  background: #cc6741;
 }
 
 /* no border needed on the last nav link */
@@ -103,6 +125,10 @@ nav[role="primary"] ul li:last-child a {
 }
 
 /* page specific styles */
+.featured-section {
+  padding: 2em 0 0;
+}
+
 .featured-section .four {
   margin: 1em 0;
 }
@@ -113,13 +139,58 @@ nav[role="primary"] ul li:last-child a {
   color: #76ABFC;
 }
 
+.banner h2 {
+  color: #cc6741;
+  font-size: 3.2em;
+  line-height: 1em;
+  letter-spacing: -.05em;
+  text-align: center;
+  font-family: georgia, serif;
+}
+
+.learn-more {
+  background: #3b3b3b;
+  text-align: center;
+}
+
+.learn-more h2 {
+  color: #f9f9f9;
+  line-height: 2em;
+  font-size: 2em;
+}
+
+.button {
+  padding: 0 .75em;
+  background: #cc6741;
+  color: white;
+  text-decoration: none;
+  border-radius: .1em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.button:hover {
+  background: #da6133;
+}
+
 /* media queries: For screens larger than 450px */
 @media only screen and (min-width: 450px) {
 
-  .columns.banner {
-    padding-bottom: 30%;
+  h1.logo {
+    float: left;
+    margin: 0 1em 0 0;
+  }
+
+  .band.banner {
+    padding-bottom: 10% 0;
     background: url('../images/bigimage.jpg') no-repeat center center;
     background-size: cover;
+  }
+
+  .banner h2 {
+    color: white;
+    font-size: 5em;
+    text-align: left;
   }
 
   /* override the 25% width to improve legibility of the featured section */
@@ -141,11 +212,22 @@ nav[role="primary"] ul li:last-child a {
     position: relative;
   }
 
+  nav[role="primary"] ul li {
+    position: relative;
+    margin: 1.8em 0 0 0;
+  }
+
   nav[role="primary"] ul li a {
     float: left;
     background: none;
     color: #333;
     border: none;
+    border-radius: 0.2em;
+  }
+
+  nav[role="primary"] ul li a:hover {
+    color: #f8f8f8;
+    background: #3b3b3b;
   }
 }
 
