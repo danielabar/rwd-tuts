@@ -312,3 +312,8 @@ But using online tool is not an optimal workflow. Use an automated tool to conca
 Manually changing browser size on desktop isn't representative of how site will really look on a mobile device.
 
 Online tool for testing layout: [Responsinator](http://www.responsinator.com/)
+Shows how your site looks in different iframe sizes.
+
+Also try [BrowserStack](http://www.browserstack.com/) (not free)
+
+But emulators are not perfect, therefore need to test on as many physical devices as possible.
